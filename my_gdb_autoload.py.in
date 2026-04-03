@@ -2,6 +2,10 @@ import sys
 
 sys.path.insert(0, "@PROJECT_SOURCE_DIR@")
 
-from my_gdb_pretty_printers.custom_printers import register_pretty_printers
+import gdb.printing
+from my_gdb_pretty_printers import custom_printers
 
-register_pretty_printers(None)
+gdb.printing.register_pretty_printer(
+  gdb.current_objfile(),
+  custom_printers.build_pretty_printers()
+)

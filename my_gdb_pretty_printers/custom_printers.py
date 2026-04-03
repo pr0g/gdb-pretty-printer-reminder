@@ -8,7 +8,7 @@ class fooPrinter(gdb.ValuePrinter):
         self.__val = val
 
     def to_string(self):
-        return "a=<" + str(self.__val["a"]) + "> b=<" + str(self.__val["b"]) + ">"
+        return "a={" + str(self.__val["a"]) + "} b={" + str(self.__val["b"]) + "}"
 
 
 class barPrinter(gdb.ValuePrinter):
@@ -18,15 +18,11 @@ class barPrinter(gdb.ValuePrinter):
         self.__val = val
 
     def to_string(self):
-        return "x=<" + str(self.__val["x"]) + "> y=<" + str(self.__val["y"]) + ">"
+        return "x={" + str(self.__val["x"]) + "} y={" + str(self.__val["y"]) + "}"
 
 
-def build_pretty_printer():
+def build_pretty_printers():
     pp = gdb.printing.RegexpCollectionPrettyPrinter("custom_printers")
     pp.add_printer("foo", "^foo$", fooPrinter)
     pp.add_printer("bar", "^bar$", barPrinter)
     return pp
-
-def register_pretty_printers(obj=None):
-    gdb.printing.register_pretty_printer(obj, build_pretty_printer())
-
