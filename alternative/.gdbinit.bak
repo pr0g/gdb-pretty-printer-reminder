@@ -1,0 +1,12 @@
+# python
+# import sys, os
+# sys.path.insert(0, os.path.expanduser('/work'))   # adjust path
+# import custom_printers
+# custom_printers.register_pretty_printers()
+# print("custom_printers loaded")
+# end
+
+# Optional quality-of-life settings
+# set print pretty on
+# set print array on
+# set print array-indexes on
