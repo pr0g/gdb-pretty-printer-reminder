@@ -15,5 +15,9 @@ int main(int argc, char** argv) {
   foo f2 = {.a = 12, .b = 123};
   bar b = {.x = f, .y = f2};
 
+  foo fs[20] = {};
+  fs[0] = f;
+  fs[1] = f2;
+
   return 0;
 }
