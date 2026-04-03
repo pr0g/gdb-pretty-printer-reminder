@@ -1,3 +1,5 @@
 path to add/update gdbinit - /root/.config/gdb/gdbinit
 content to add to gdbinit - add-auto-load-safe-path /work
     note: '/work' is path to where gdb pretty-printers will be loaded (e.g. /workspace)
+
+(see setup.sh for automated configuration following the above)
